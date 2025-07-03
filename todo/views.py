@@ -17,9 +17,8 @@ def index(request):
         tasks = Task.objects.order_by('due_at')
     else:
         tasks = Task.objects.order_by('-posted_at')
-    
+
     context = {
         'tasks': tasks
     }
-    return render (request, 'todo/index.html', context)
-
+    return render(request, 'todo/index.html', context)
